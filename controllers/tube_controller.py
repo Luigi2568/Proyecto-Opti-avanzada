@@ -16,7 +16,7 @@
 import cvxpy as cp
 import numpy as np
 
-from aux import (
+from utils_aux import (
     compute_projected_matrix,
     get_linear_box_constraints,
     get_linear_ordered_state_constraints,

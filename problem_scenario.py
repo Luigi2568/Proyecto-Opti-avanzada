@@ -17,7 +17,7 @@ import pickle
 import numpy as np
 import pinocchio as pin
 
-from aux import DynPinWrapper, DeltaDynPin
+from utils_aux import DynPinWrapper, DeltaDynPin
 
 
 class ProblemScenarioMassAllPin:

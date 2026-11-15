@@ -19,7 +19,7 @@ import numpy as np
 from scipy.spatial import ConvexHull
 from scipy.integrate import solve_ivp
 
-from aux import (
+from utils_aux import (
     get_linear_double_integrator_discrete_dynamics,
     compute_model_error,
     get_hyper_box_corners,

@@ -24,7 +24,7 @@ import numpy as np
 from scipy.linalg import sqrtm
 import tqdm
 
-from aux import (
+from utils_aux import (
     get_linear_box_constraints,
     get_linear_ordered_state_constraints,
     get_linear_double_integrator_discrete_dynamics

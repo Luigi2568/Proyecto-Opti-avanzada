@@ -16,7 +16,8 @@ import time
 
 import numpy as np
 
-from aux import index_compute_largets_margin_bubble, compute_goal_state, get_linear_double_integrator_discrete_dynamics
+from utils_aux import index_compute_largets_margin_bubble, compute_goal_state, get_linear_double_integrator_discrete_dynamics
+
 from controllers.flexible_tube_controller import FlexibleTubeNaiveCorridorController
 from controllers.nom_controller import NominalController
 

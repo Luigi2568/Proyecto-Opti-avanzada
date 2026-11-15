@@ -1,9 +1,9 @@
 run_nr,name,t2g,status
-0,ft,231,success
+0,ft,232,success
 0,rt,248,success
 0,nom,14,infeasible
 0,nom_star,204,success
-1,ft,219,success
+1,ft,196,success
 1,rt,206,success
 1,nom,10,infeasible
 1,nom_star,186,success
@@ -19,7 +19,7 @@ run_nr,name,t2g,status
 4,rt,395,success
 4,nom,10,infeasible
 4,nom_star,330,success
-5,ft,228,success
+5,ft,251,success
 5,rt,272,success
 5,nom,10,infeasible
 5,nom_star,218,success
@@ -27,12 +27,12 @@ run_nr,name,t2g,status
 6,rt,276,success
 6,nom,10,infeasible
 6,nom_star,254,success
-7,ft,355,success
+7,ft,354,success
 7,rt,362,success
-7,nom,10,infeasible
+7,nom,16,infeasible
 7,nom_star,300,success
 8,ft,353,success
-8,rt,356,success
+8,rt,357,success
 8,nom,10,infeasible
 8,nom_star,328,success
 9,ft,351,success

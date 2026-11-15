@@ -1,7 +1,7 @@
 import time
 import numpy as np
 
-from aux import  compute_goal_state, interpolate_equidistant
+from utils_aux import  compute_goal_state, interpolate_equidistant
 from corridor_simulators.base import BaseSimulator
 
 
@@ -98,10 +98,7 @@ class FlexibleTubeSimulator(BaseSimulator):
             dist = x_believed - x
             s_ = np.linalg.norm(self.cont.P_sqrt @ dist)
             if s_ > s_M:
-                noise = np.vstack(noise)
-                ss_ = np.linalg.norm(self.cont.P_sqrt @ noise.T, axis=0)
-                # self.rho_d
-                print(s_, s_M, self.cont.c, ss_, betas[:aux_controller_steps])
+                print("Tube check exceeded:", s_, s_M)
                 status = "infeasible outcome"
                 break
             X = cont.get_predicted_traj()

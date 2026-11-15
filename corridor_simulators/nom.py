@@ -15,7 +15,7 @@
 import time
 import numpy as np
 
-from aux import  compute_goal_state, interpolate_equidistant, get_tracking_path_clearance
+from utils_aux import  compute_goal_state, interpolate_equidistant, get_tracking_path_clearance
 from corridor_simulators.base import BaseSimulator
 
 

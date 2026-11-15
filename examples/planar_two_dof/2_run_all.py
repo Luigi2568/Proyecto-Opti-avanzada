@@ -23,7 +23,7 @@ import pandas as pd
 
 
 from controllers.common import load_all_controllers
-from aux import interpolate_equidistant, TimeStepIntegratorContinuous, TimeStepIntegratorDiscrete
+from utils_aux import interpolate_equidistant, TimeStepIntegratorContinuous, TimeStepIntegratorDiscrete
 from corridor_simulators.flexible_tube import FlexibleTubeSimulator
 from corridor_simulators.nom import NomSimulator
 from corridor_simulators.tube import TubeSimulator

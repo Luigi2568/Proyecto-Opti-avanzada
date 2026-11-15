@@ -14,7 +14,7 @@
 
 import numpy as np
 
-from aux import index_compute_largets_margin_bubble, compute_goal_state
+from utils_aux import index_compute_largets_margin_bubble, compute_goal_state
 
 class BaseSimulator:
 

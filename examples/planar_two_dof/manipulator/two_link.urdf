@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+  Brazo planar de 2 GDL reconstruido para el ejemplo planar_two_dof de rob_cvx_rmpc.
+  El URDF original no esta en el repo (.gitignore excluye *.urdf).
+  Geometria: L1 = 0.40 m, L2 = 0.25 m, base en el origen, ejes z, q = 0 a lo largo de +x.
+    -> reproduce el 100% de la grilla de colisiones de cspace_data.npz.
+  Dinamica: masas, centros de masa e inercias ajustados para reproducir las constantes
+    guardadas (verts_acc, a, b) con error_frac = 0.2. No es identificable de forma unica:
+    es UN conjunto de parametros consistente, no necesariamente el original.
+-->
+<robot name="two_link">
+  <link name="base_link"/>
+
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14159" upper="3.14159" effort="20" velocity="2"/>
+  </joint>
+
+  <link name="link_1">
+    <inertial>
+      <origin xyz="0.20697 0 0" rpy="0 0 0"/>
+      <mass value="0.4"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.13193" iyz="0" izz="0.13193"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0.4 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14159" upper="3.14159" effort="20" velocity="2"/>
+  </joint>
+
+  <link name="link_2">
+    <inertial>
+      <origin xyz="0.0193 0 0" rpy="0 0 0"/>
+      <mass value="1.42625"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.12111" iyz="0" izz="0.12111"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_ee" type="fixed">
+    <parent link="link_2"/>
+    <child link="link_ee"/>
+    <origin xyz="0.25 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="link_ee"/>
+</robot>

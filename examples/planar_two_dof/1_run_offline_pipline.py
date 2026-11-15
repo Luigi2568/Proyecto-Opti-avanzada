@@ -32,7 +32,7 @@ P_CACHED_ROOT_DIR.mkdir(exist_ok=True, parents=True)
 
 
 def get_problem_two_dof(dir_name, u_amp_nom, v_amp_nom, error_frac):
-    p_urdf = P_EXAMPLE_2_DOF / "manipulator"  / "two_link.urdf"
+    p_urdf = str(P_EXAMPLE_2_DOF / "manipulator" / "two_link.urdf").replace("\\", "/")
     p_cached_dir = P_CACHED_ROOT_DIR / dir_name
     torque_limits = np.r_[20, 20]
     p_cached_dir.mkdir(exist_ok=True, parents=True)

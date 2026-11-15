@@ -18,7 +18,7 @@ import pathlib
 import numpy as np
 from scipy.integrate import solve_ivp
 
-from aux import (
+from utils_aux import (
     compute_model_error,
     get_hyper_box_corners,
     get_hyper_box_corners_from_limits
