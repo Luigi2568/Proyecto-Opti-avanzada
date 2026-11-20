@@ -58,7 +58,8 @@ class RobustCorridorController:
         w_bar = np.sqrt(w_bar_sq)
         delta = w_bar / (1 - rho)
         P_ = compute_projected_matrix((P / (delta ** 2)), m_p)
-        eig_vals, eig_vecs = np.linalg.eig(P_)
+        # IEE3002: eigvalsh (P_ es simétrica); con P acoplada, eig() devuelve complejos con parte imaginaria 0
+        eig_vals = np.linalg.eigvalsh(0.5 * (P_ + P_.T))
         self.N = N
         self.r_p = np.sqrt(1 / eig_vals).max()
         self.delta = delta

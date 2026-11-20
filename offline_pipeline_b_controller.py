@@ -202,7 +202,7 @@ def compute_controllers_decoupled(
             c_vn_sq.append(c_vn_sq_)
 
             c_up_sq.append(c_up_sq_)
-            c_un_sq.append(c_pn_sq_)
+            c_un_sq.append(c_un_sq_)  # IEE3002: el original agregaba c_pn_sq_ (ajuste de posición) por error
             w_bar_sq.append(w_bar_sq_)
             loss += loss_
 

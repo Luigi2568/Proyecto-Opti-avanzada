@@ -192,3 +192,8 @@ cython_debug/
 # --- nunca subir ---
 *.lic
 .vscode/
+
+# IEE3002: trayectorias y corredores (se regeneran)
+**/motion/
+**/motion_na*/
+**/corridors/
