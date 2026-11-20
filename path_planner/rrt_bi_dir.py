@@ -83,14 +83,13 @@ def rrt_bi_dir_plan(
 
 
 def simple_shortcut(cs, rs):
-    D = np.linalg.norm(cs[:, None] - cs[None, :], axis=-1)
-    R = rs[:, None] + rs[None, :]
-    M = D < R
+    # IEE3002: misma lógica que el original, pero calcula solo la fila i de D < R
+    # (memoria O(N) en vez de O(N^2); con N ~ 1e4 puntos la matriz completa no cabe en memoria)
     i = 0
     indxs_path = [i]
     i_last = rs.size - 1
     while True:
-        m = M[i]
+        m = np.linalg.norm(cs - cs[i], axis=-1) < rs[i] + rs
         indxs, = np.nonzero(m)
         i_ = indxs.max()
         if i_ == i_last:

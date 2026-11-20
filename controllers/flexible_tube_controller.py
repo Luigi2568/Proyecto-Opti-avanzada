@@ -61,7 +61,8 @@ class FlexibleTubeNaiveCorridorController:
         self.m_p = m_p
         self.ball_dim = ball_dim or m_p
         P_ = compute_projected_matrix(P, m_p)
-        eig_vals, eig_vecs = np.linalg.eig(P_)
+        # IEE3002: eigvalsh (P_ es simétrica); con P acoplada, eig() devuelve complejos con parte imaginaria 0
+        eig_vals = np.linalg.eigvalsh(0.5 * (P_ + P_.T))
         r_p_0 = np.sqrt(1 / eig_vals).max()
 
         X = cp.Variable((m_x, N + 1), name="X")

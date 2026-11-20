@@ -76,9 +76,14 @@ class ProblemScenarioMassAllPin:
             )
 
     @classmethod
-    def from_cached_dir(cls, p_cached_dir):
+    def from_cached_dir(cls, p_cached_dir, path_urdf=None):
         with (p_cached_dir / "ps.pckl").open("rb") as fp:
             data = pickle.load(fp)
+        # IEE3002: usar la carpeta actual (y opcionalmente el URDF local) aunque ps.pckl se haya
+        # generado en otro computador o con otra ruta del repo
+        data["p_cached_dir"] = p_cached_dir
+        if path_urdf is not None:
+            data["path_urdf"] = path_urdf
         return cls(
             **data
         )
